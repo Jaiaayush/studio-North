@@ -1,0 +1,253 @@
+/*
+  components/Sections.tsx — FRONTEND
+  The building blocks that pages are assembled from. Each one is a full-width
+  section or a card, and several pages reuse them:
+  - PageHero: the big title at the top of every inner page
+  - Marquee: the scrolling strip of services
+  - ProjectVisual / ProjectCard: the picture and card for one piece of work
+  - ProcessSteps, Testimonials, PlanCards, FaqList: content blocks
+  - CtaBand: the lime "get a proposal" band at the bottom of each page
+  All the words come from lib/site.ts.
+*/
+import { faqs, marqueeWords, plans, processSteps, projects, testimonials } from "@/lib/site";
+import { Button } from "./Button";
+import { Reveal, RiseText } from "./Motion";
+
+/* ---------- PageHero ---------- */
+export function PageHero({
+  label,
+  title,
+  highlight,
+  lede,
+}: {
+  label: string;
+  title: string;
+  highlight?: string[];
+  lede: string;
+}) {
+  return (
+    <section className="relative overflow-hidden bg-ink pb-16 pt-16 md:pb-24 md:pt-28">
+      {/* Soft violet glow behind the title. Decoration only. */}
+      <div aria-hidden="true" className="pointer-events-none absolute -right-40 -top-40 size-[38rem] rounded-full bg-violet opacity-40 blur-[120px]" />
+      <div className="wrap relative">
+        <p className="mb-6 font-medium text-lime">{label}</p>
+        <h1 className="display max-w-[14ch]">
+          <RiseText text={title} highlight={highlight} />
+        </h1>
+        <Reveal delay={0.35}>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mute md:text-xl">{lede}</p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Marquee ---------- */
+export function Marquee() {
+  /* The list is printed twice in a row. The CSS animation slides the row left by
+     exactly half, then restarts, so the loop has no visible jump. */
+  const row = [...marqueeWords, ...marqueeWords];
+  return (
+    <div className="marquee overflow-hidden bg-lime py-5 text-ink" aria-label="Our services">
+      <div className="marquee-track flex w-max animate-marquee">
+        {[0, 1].map((copy) => (
+          <ul key={copy} className="flex shrink-0" aria-hidden={copy === 1}>
+            {row.map((word, i) => (
+              <li key={i} className="flex items-center gap-8 pr-8 text-2xl font-bold tracking-tight md:text-4xl">
+                {word}
+                <span className="block size-3 rounded-full bg-violet" aria-hidden="true" />
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ---------- ProjectVisual ---------- */
+/* A drawn mini web page inside a browser frame. It stands in for a real screenshot
+   until real client work exists. Each "look" is a different colour scheme. */
+const looks = {
+  violet: { bg: "bg-violet", bar: "bg-paper", accent: "bg-lime", soft: "bg-paper/30" },
+  lime: { bg: "bg-lime", bar: "bg-ink", accent: "bg-violet", soft: "bg-ink/20" },
+  paper: { bg: "bg-paper", bar: "bg-ink", accent: "bg-violet", soft: "bg-ink/15" },
+  ink: { bg: "bg-ink-2", bar: "bg-paper", accent: "bg-lime", soft: "bg-paper/20" },
+} as const;
+
+export function ProjectVisual({ look }: { look: keyof typeof looks }) {
+  const c = looks[look];
+  return (
+    <div aria-hidden="true" className={`flex h-full w-full flex-col ${c.bg} p-[7%]`}>
+      <div className="flex gap-1.5">
+        <span className={`size-2 rounded-full ${c.soft}`} />
+        <span className={`size-2 rounded-full ${c.soft}`} />
+        <span className={`size-2 rounded-full ${c.soft}`} />
+      </div>
+      <div className="mt-[9%] grid flex-1 grid-cols-[1.25fr_1fr] gap-[6%]">
+        <div className="flex flex-col justify-center gap-[7%]">
+          <span className={`h-[13%] w-full rounded-md ${c.bar}`} />
+          <span className={`h-[13%] w-3/4 rounded-md ${c.bar}`} />
+          <span className={`mt-[4%] h-[4%] w-11/12 rounded-full ${c.soft}`} />
+          <span className={`h-[4%] w-2/3 rounded-full ${c.soft}`} />
+          <span className={`mt-[6%] h-[15%] w-2/5 rounded-full ${c.accent}`} />
+        </div>
+        <div className={`rounded-2xl ${c.accent}`} />
+      </div>
+    </div>
+  );
+}
+
+/* ---------- ProjectCard ---------- */
+export function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+  return (
+    <article className="group">
+      {/* The picture zooms slightly inside its frame on hover */}
+      <div className="aspect-[4/3] overflow-hidden rounded-3xl">
+        <div className="h-full w-full transition-transform duration-500 ease-out-strong group-hover:scale-[1.04]">
+          <ProjectVisual look={project.look} />
+        </div>
+      </div>
+      <div className="mt-5 flex items-start justify-between gap-4">
+        <div>
+          <h3 className="text-xl font-bold tracking-tight md:text-2xl">{project.title}</h3>
+          <p className="mt-1 text-mute">
+            {project.category} · {project.result}
+          </p>
+        </div>
+        <span className="placeholder-tag mt-1 shrink-0 text-mute">Placeholder</span>
+      </div>
+    </article>
+  );
+}
+
+/* ---------- ProcessSteps ---------- */
+export function ProcessSteps() {
+  return (
+    <section className="bg-violet py-20 text-paper md:py-32">
+      <div className="wrap">
+        <Reveal>
+          <h2 className="heading max-w-[16ch]">
+            Enquiry to live site in <span className="text-lime">four steps</span>
+          </h2>
+        </Reveal>
+        <ol className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          {processSteps.map((step, i) => (
+            <li key={step.title}>
+              <Reveal delay={i * 0.07}>
+                <span className="block text-7xl font-bold leading-none tracking-tighter text-lime md:text-8xl">{i + 1}</span>
+                <h3 className="mt-6 text-2xl">{step.title}</h3>
+                <p className="mt-3 leading-relaxed text-paper/90">{step.text}</p>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Testimonials ---------- */
+export function Testimonials() {
+  return (
+    <section className="bg-ink py-20 md:py-32">
+      <div className="wrap">
+        <Reveal>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="heading">Client reviews</h2>
+            <span className="placeholder-tag text-mute">Placeholder quotes</span>
+          </div>
+        </Reveal>
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <Reveal key={i} delay={i * 0.07}>
+              <figure className="flex h-full flex-col justify-between rounded-3xl bg-ink-2 p-8 transition-transform duration-300 ease-out-strong hover:-translate-y-1.5">
+                <blockquote className="text-xl font-medium leading-snug">{t.quote}</blockquote>
+                <figcaption className="mt-10 text-mute">
+                  <span className="block font-semibold text-paper">{t.name}</span>
+                  {t.role}
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- PlanCards ---------- */
+/* The three price cards. The "featured" plan is filled violet to stand out. */
+export function PlanCards() {
+  return (
+    <div className="grid gap-6 lg:grid-cols-3">
+      {plans.map((plan, i) => (
+        <Reveal key={plan.name} delay={i * 0.07}>
+          <article
+            className={`flex h-full flex-col rounded-3xl p-8 transition-transform duration-300 ease-out-strong hover:-translate-y-1.5 md:p-10 ${
+              plan.featured ? "bg-violet text-paper" : "bg-ink text-paper"
+            }`}
+          >
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="text-2xl">{plan.name}</h3>
+              {plan.featured && <span className="rounded-full bg-lime px-3 py-1.5 text-xs font-semibold text-ink">Most popular</span>}
+            </div>
+            <p className="mt-8 text-5xl font-bold tracking-tighter">{plan.price}</p>
+            <p className={`mt-3 ${plan.featured ? "text-paper/90" : "text-mute"}`}>{plan.who}</p>
+            <ul className="mb-10 mt-8 space-y-3">
+              {plan.features.map((f) => (
+                <li key={f} className="flex gap-3">
+                  <span className="mt-2 block size-2 shrink-0 rounded-full bg-lime" aria-hidden="true" />
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <Button href="/contact" variant={plan.featured ? "lime" : "ghost"} className="mt-auto w-full">
+              Get a proposal
+            </Button>
+          </article>
+        </Reveal>
+      ))}
+    </div>
+  );
+}
+
+/* ---------- FaqList ---------- */
+/* Uses the browser's built-in <details> element, so it opens and closes with
+   no JavaScript and works with a keyboard out of the box. */
+export function FaqList() {
+  return (
+    <div className="divide-y divide-ink/15 border-y border-ink/15">
+      {faqs.map((f) => (
+        <details key={f.q} className="group">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-6 py-6 text-xl font-semibold tracking-tight md:text-2xl [&::-webkit-details-marker]:hidden">
+            {f.q}
+            <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center rounded-full bg-ink text-2xl font-normal leading-none text-lime transition-transform duration-200 group-open:rotate-45">
+              +
+            </span>
+          </summary>
+          <p className="max-w-3xl pb-8 text-lg leading-relaxed text-mute-ink">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
+
+/* ---------- CtaBand ---------- */
+export function CtaBand() {
+  return (
+    <section className="bg-lime py-20 text-ink md:py-32">
+      <div className="wrap">
+        <Reveal>
+          <h2 className="display max-w-[12ch]">Need more booked jobs?</h2>
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
+            <Button href="/contact" variant="ink" className="px-8 py-5 text-lg">
+              Get a proposal
+            </Button>
+            <p className="max-w-xs font-medium">Fixed price, sent within one working day.</p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
