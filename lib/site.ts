@@ -14,7 +14,7 @@ export const site = {
   tagline: "Websites that get London trades booked.",
   description:
     "Websites for London plumbers, electricians, salons and other local businesses. Clear prices, quick to build, easy for customers to find and call you.",
-  url: "https://studio-north-ochre.vercel.app", // the live address. Swap for your own domain when you buy one
+  url: "https://warm-puppy-6227cb.netlify.app", // the live address. Swap for your own domain when you buy one
   email: "ghoshaayush89@gmail.com",
   phone: "07554 469353", // how the number is shown on the site
   phoneHref: "+447554469353", // the same number in the form a phone needs to dial it
