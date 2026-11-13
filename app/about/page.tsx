@@ -1,7 +1,7 @@
 /*
   app/about/page.tsx: FRONTEND (the About page, address "/about")
   Explains how the studio works: four promises, then a short founder block.
-  The founder block is a placeholder: add your own name, photo and story.
+  The founder name comes from lib/site.ts.
 */
 import type { Metadata } from "next";
 import { Button } from "@/components/Button";

@@ -1,7 +1,7 @@
 /*
   app/contact/page.tsx: FRONTEND (the Contact page, address "/contact")
   The proposal form (components/ContactForm.tsx) beside the contact details.
-  Contact details come from lib/site.ts and are placeholders.
+  Contact details come from lib/site.ts.
 */
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
