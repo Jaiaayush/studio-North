@@ -257,3 +257,15 @@ h3 {
     transition: none;
   }
 }
+
+/* ---------- 5. SCREENSHOT MODE ---------- */
+/* Opening a concept page with "#shot" on the end of its address hides the Studio North
+   header and the concept label, so a clean picture of the design can be taken for its
+   card on the Work page. Visitors never see this unless they type #shot themselves. */
+body:has(#shot:target) > header,
+body:has(#shot:target) .concept-bar {
+  display: none;
+}
+body:has(#shot:target) .page-enter {
+  animation: none;
+}

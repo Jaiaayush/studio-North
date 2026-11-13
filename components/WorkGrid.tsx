@@ -35,7 +35,7 @@ export function WorkGrid() {
 
       {/* Announces the result count to screen readers when the filter changes */}
       <p className="mt-6 text-mute" aria-live="polite">
-        Showing {shown.length} placeholder {shown.length === 1 ? "project" : "projects"}
+        Showing {shown.length} concept {shown.length === 1 ? "project" : "projects"}
       </p>
 
       <div className="mt-8 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">

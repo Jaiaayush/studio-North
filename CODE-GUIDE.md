@@ -34,7 +34,7 @@ Frontend runs in the visitor's browser, so anyone can read it. Backend runs only
 | Colours | Section 1 of `app/globals.css` (the `--color-...` lines) |
 | Font | `Poppins` in `app/layout.tsx` |
 | Button style | `.btn` in `app/globals.css` |
-| Images | No photos are used yet. Project pictures are drawn in code by `ProjectVisual` in `components/Sections.tsx`. To use real images, put files in `public/` and swap `ProjectVisual` for the Next.js `<Image>` component with `alt` text |
+| Work card pictures | Files in `public/work/`, named in `projects` in `lib/site.ts`. To retake one, open the concept page with `#shot` on the end of the address (hides the header) and screenshot it |
 | Form fields | `components/ContactForm.tsx` (the boxes) and `lib/contact-schema.ts` (the rules). A new field also needs a new column in the database |
 | Header and footer links | `nav` in `lib/site.ts` |
 
@@ -50,6 +50,10 @@ Frontend runs in the visitor's browser, so anyone can read it. Backend runs only
 | `app/page.tsx` | Frontend | Home page |
 | `app/services/page.tsx` | Frontend | Services page |
 | `app/work/page.tsx` | Frontend | Work page |
+| `app/work/plumber/page.tsx` | Frontend | Concept site: invented plumber |
+| `app/work/electrician/page.tsx` | Frontend | Concept site: invented electrician |
+| `app/work/salon/page.tsx` | Frontend | Concept site: invented hair salon |
+| `public/work/*.png` | Frontend | Screenshots of the concept sites, shown on the work cards |
 | `app/about/page.tsx` | Frontend | About page, including the founder block |
 | `app/pricing/page.tsx` | Frontend | Pricing page with plans and FAQs |
 | `app/contact/page.tsx` | Frontend | Contact page that holds the form |

@@ -6,15 +6,15 @@
   3. Services overview
   4. Selected work
   5. Process (four steps)
-  6. Client reviews
-  7. Pricing teaser
-  8. Call-to-action band
+  6. Pricing teaser
+  7. Call-to-action band
+  (Client reviews are left out until there are real ones to show.)
   Words and numbers come from lib/site.ts.
 */
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Reveal, RiseText } from "@/components/Motion";
-import { CtaBand, Marquee, PlanCards, ProcessSteps, ProjectCard, Testimonials } from "@/components/Sections";
+import { CtaBand, Marquee, PlanCards, ProcessSteps, ProjectCard } from "@/components/Sections";
 import { projects, services, stats } from "@/lib/site";
 
 export default function HomePage() {
@@ -51,7 +51,7 @@ export default function HomePage() {
               </div>
             </Reveal>
 
-            {/* Headline numbers. Bracketed ones are placeholders. */}
+            {/* Three facts about how we work, from lib/site.ts */}
             <Reveal delay={0.65}>
               <dl className="grid grid-cols-3 gap-4 border-t border-line pt-6">
                 {stats.map((s) => (
@@ -104,7 +104,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. SELECTED WORK: first three projects from lib/site.ts */}
+      {/* 4. SELECTED WORK: concept projects from lib/site.ts */}
       <section className="bg-ink py-20 md:py-32">
         <div className="wrap">
           <Reveal>
@@ -130,10 +130,7 @@ export default function HomePage() {
       {/* 5. PROCESS */}
       <ProcessSteps />
 
-      {/* 6. REVIEWS */}
-      <Testimonials />
-
-      {/* 7. PRICING TEASER */}
+      {/* 6. PRICING TEASER */}
       <section className="bg-paper py-20 text-ink md:py-32">
         <div className="wrap">
           <Reveal>
@@ -157,7 +154,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. CALL TO ACTION */}
+      {/* 7. CALL TO ACTION */}
       <CtaBand />
     </>
   );

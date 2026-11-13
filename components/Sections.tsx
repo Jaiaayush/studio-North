@@ -4,11 +4,14 @@
   section or a card, and several pages reuse them:
   - PageHero: the big title at the top of every inner page
   - Marquee: the scrolling strip of services
-  - ProjectVisual / ProjectCard: the picture and card for one piece of work
+  - ProjectCard: the screenshot and card for one piece of work
+  - ConceptBar / ConceptOutro: the label above and the band below each concept page
   - ProcessSteps, Testimonials, PlanCards, FaqList: content blocks
   - CtaBand: the lime "get a proposal" band at the bottom of each page
   All the words come from lib/site.ts.
 */
+import Image from "next/image";
+import Link from "next/link";
 import { faqs, marqueeWords, plans, processSteps, projects, testimonials } from "@/lib/site";
 import { Button } from "./Button";
 import { Reveal, RiseText } from "./Motion";
@@ -65,59 +68,63 @@ export function Marquee() {
   );
 }
 
-/* ---------- ProjectVisual ---------- */
-/* A drawn mini web page inside a browser frame. It stands in for a real screenshot
-   until real client work exists. Each "look" is a different colour scheme. */
-const looks = {
-  violet: { bg: "bg-violet", bar: "bg-paper", accent: "bg-lime", soft: "bg-paper/30" },
-  lime: { bg: "bg-lime", bar: "bg-ink", accent: "bg-violet", soft: "bg-ink/20" },
-  paper: { bg: "bg-paper", bar: "bg-ink", accent: "bg-violet", soft: "bg-ink/15" },
-  ink: { bg: "bg-ink-2", bar: "bg-paper", accent: "bg-lime", soft: "bg-paper/20" },
-} as const;
-
-export function ProjectVisual({ look }: { look: keyof typeof looks }) {
-  const c = looks[look];
+/* ---------- ProjectCard ---------- */
+/* One piece of work: a real screenshot of the page, its name, and a link to it.
+   Concept work carries a "Concept project" tag so nobody mistakes it for a client. */
+export function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
-    <div aria-hidden="true" className={`flex h-full w-full flex-col ${c.bg} p-[7%]`}>
-      <div className="flex gap-1.5">
-        <span className={`size-2 rounded-full ${c.soft}`} />
-        <span className={`size-2 rounded-full ${c.soft}`} />
-        <span className={`size-2 rounded-full ${c.soft}`} />
+    <Link href={`/work/${project.slug}`} className="group block">
+      {/* The screenshot zooms slightly inside its frame on hover */}
+      <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-ink-2">
+        <Image
+          src={project.image}
+          alt={`Screenshot of the ${project.title} website design`}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover object-top transition-transform duration-500 ease-out-strong group-hover:scale-[1.04]"
+        />
       </div>
-      <div className="mt-[9%] grid flex-1 grid-cols-[1.25fr_1fr] gap-[6%]">
-        <div className="flex flex-col justify-center gap-[7%]">
-          <span className={`h-[13%] w-full rounded-md ${c.bar}`} />
-          <span className={`h-[13%] w-3/4 rounded-md ${c.bar}`} />
-          <span className={`mt-[4%] h-[4%] w-11/12 rounded-full ${c.soft}`} />
-          <span className={`h-[4%] w-2/3 rounded-full ${c.soft}`} />
-          <span className={`mt-[6%] h-[15%] w-2/5 rounded-full ${c.accent}`} />
+      <div className="mt-5 flex items-start justify-between gap-4">
+        <div>
+          <h3 className="text-xl font-bold tracking-tight md:text-2xl">{project.title}</h3>
+          <p className="mt-1 text-mute">{project.summary}</p>
         </div>
-        <div className={`rounded-2xl ${c.accent}`} />
+        {project.concept && <span className="placeholder-tag mt-1 shrink-0 text-mute">Concept project</span>}
+      </div>
+    </Link>
+  );
+}
+
+/* ---------- ConceptBar ---------- */
+/* The strip at the top of every concept page. It says plainly that the business
+   is invented, and gives a way back to the Work page. */
+export function ConceptBar({ name }: { name: string }) {
+  return (
+    <div className="concept-bar bg-ink py-4 text-paper">
+      <div className="wrap flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+        <p className="text-sm">
+          <strong className="text-lime">Concept project, not a real client.</strong> {name} is an invented business. Any likeness to a real company is a coincidence.
+        </p>
+        <Link href="/work" className="link-draw text-sm font-semibold">
+          Back to all work
+        </Link>
       </div>
     </div>
   );
 }
 
-/* ---------- ProjectCard ---------- */
-export function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+/* ---------- ConceptOutro ---------- */
+/* The Studio North band under every concept page. */
+export function ConceptOutro() {
   return (
-    <article className="group">
-      {/* The picture zooms slightly inside its frame on hover */}
-      <div className="aspect-[4/3] overflow-hidden rounded-3xl">
-        <div className="h-full w-full transition-transform duration-500 ease-out-strong group-hover:scale-[1.04]">
-          <ProjectVisual look={project.look} />
-        </div>
+    <section className="bg-lime py-16 text-ink md:py-24">
+      <div className="wrap flex flex-wrap items-end justify-between gap-8">
+        <h2 className="heading max-w-[14ch]">Want a site like this one?</h2>
+        <Button href="/contact" variant="ink" className="px-8 py-5 text-lg">
+          Get a proposal
+        </Button>
       </div>
-      <div className="mt-5 flex items-start justify-between gap-4">
-        <div>
-          <h3 className="text-xl font-bold tracking-tight md:text-2xl">{project.title}</h3>
-          <p className="mt-1 text-mute">
-            {project.category} · {project.result}
-          </p>
-        </div>
-        <span className="placeholder-tag mt-1 shrink-0 text-mute">Placeholder</span>
-      </div>
-    </article>
+    </section>
   );
 }
 

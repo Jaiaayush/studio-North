@@ -14,7 +14,7 @@ export const site = {
   tagline: "Websites that get London trades booked.",
   description:
     "A London web design studio for trades and local service businesses. Fast, easy-to-find websites that turn a search into a booked job.",
-  url: "https://www.example.co.uk", // placeholder: your real domain goes here
+  url: "https://studio-north-ochre.vercel.app", // the live address. Swap for your own domain when you buy one
   email: "ghoshaayush89@gmail.com",
   phone: "", // not set yet: add your business number here and it appears on the site
   area: "London, United Kingdom",
@@ -38,11 +38,12 @@ export const marqueeWords = [
   "Landing pages",
 ];
 
-/* Headline numbers. Bracketed values are placeholders: put your real numbers in. */
+/* Three facts shown in the hero. Only put things here that are true today.
+   When you have real numbers (projects delivered, review score), add them here. */
 export const stats = [
-  { value: "[00]", label: "projects delivered" },
-  { value: "[0.0]", label: "average client rating" },
   { value: "1 day", label: "to get your proposal" },
+  { value: "Fixed", label: "price, agreed up front" },
+  { value: "Yours", label: "to keep after the final invoice" },
 ];
 
 export const services = [
@@ -124,26 +125,28 @@ export const processSteps = [
 ];
 
 /* Work categories used by the filter buttons on the Work page. */
-export const workCategories = ["All", "New website", "Redesign", "Local SEO"] as const;
+export const workCategories = ["All", "Trades", "Salons"] as const;
 export type WorkCategory = (typeof workCategories)[number];
 
-/* PLACEHOLDER projects. None of these are real clients. Swap in real work when you have it. */
+/* CONCEPT projects. These are designs for invented businesses, made to show what
+   we build. They are NOT real clients, and every card and page says so.
+   Each one has its own page at /work/<slug> and a screenshot in public/work/.
+   When you finish a real client site, add it here and set concept to false. */
 export const projects: {
   slug: string;
   title: string;
   category: Exclude<WorkCategory, "All">;
-  result: string;
-  look: "violet" | "lime" | "paper" | "ink";
+  summary: string;
+  image: string;
+  concept: boolean;
 }[] = [
-  { slug: "plumber", title: "Plumbing site, Croydon", category: "New website", result: "[+00%] enquiries", look: "violet" },
-  { slug: "electrician", title: "Electrician rebuild, Bromley", category: "Redesign", result: "[0.0s] load time", look: "lime" },
-  { slug: "roofer", title: "Roofer area pages, Enfield", category: "Local SEO", result: "[Top 0] local ranking", look: "paper" },
-  { slug: "salon", title: "Salon booking site, Hackney", category: "New website", result: "[+00] bookings a month", look: "lime" },
-  { slug: "builder", title: "Builder rebuild, Ealing", category: "Redesign", result: "[+00%] enquiries", look: "ink" },
-  { slug: "locksmith", title: "Locksmith area pages, Lewisham", category: "Local SEO", result: "[+00] calls a month", look: "violet" },
+  { slug: "plumber", title: "Harrow Lane Plumbing", category: "Trades", summary: "One-page site built around a big call button", image: "/work/plumber.png", concept: true },
+  { slug: "electrician", title: "Voltline Electrical", category: "Trades", summary: "Bold dark site with a clear list of jobs", image: "/work/electrician.png", concept: true },
+  { slug: "salon", title: "Maison Fern Hair", category: "Salons", summary: "Calm site with a full price list and hours", image: "/work/salon.png", concept: true },
 ];
 
-/* PLACEHOLDER testimonials. Replace with real quotes you have permission to use. */
+/* PLACEHOLDER testimonials. Not shown anywhere on the site right now.
+   Replace with real quotes you have permission to use, then add <Testimonials /> back to app/page.tsx. */
 export const testimonials = [
   { quote: "[Short client quote about the result and how easy the project was.]", name: "[Client name]", role: "[Trade], [Town]" },
   { quote: "[Short client quote that mentions a number, a deadline met or more calls.]", name: "[Client name]", role: "[Trade], [Town]" },

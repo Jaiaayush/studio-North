@@ -1,7 +1,7 @@
 /*
   app/work/page.tsx: FRONTEND (the Work page, address "/work")
   Shows every project with filter buttons. The grid itself is components/WorkGrid.tsx.
-  All projects are placeholders until real client work is added in lib/site.ts.
+  The projects are concept work (invented businesses), listed in lib/site.ts.
 */
 import type { Metadata } from "next";
 import { CtaBand, PageHero } from "@/components/Sections";
@@ -21,7 +21,7 @@ export default function WorkPage() {
         label="Work"
         title="Sites built to win local jobs."
         highlight={["local", "jobs"]}
-        lede="These are placeholder projects that show the kinds of work we take on. Real case studies, with real numbers, replace them as clients sign off."
+        lede="These are concept projects: full designs for invented businesses, made to show what we build. Open one to see the whole page. Real client work will join them here."
       />
       <section className="bg-ink pb-20 md:pb-32">
         <div className="wrap">
