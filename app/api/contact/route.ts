@@ -46,7 +46,7 @@ export async function POST(request: Request) {
   const limit = rateLimit(ip);
   if (!limit.allowed) {
     return json(
-      { ok: false, message: "Too many enquiries from this connection. Please try again in a few minutes." },
+      { ok: false, message: "Too many messages sent. Please try again in a few minutes." },
       429,
       { "Retry-After": String(limit.retryAfterSeconds) },
     );
@@ -100,7 +100,7 @@ export async function POST(request: Request) {
     });
     if (error) {
       console.error("[contact] Database save failed:", error.message);
-      return json({ ok: false, message: "We could not save your enquiry. Please email us instead." }, 502);
+      return json({ ok: false, message: "We could not save your message. Please email us instead." }, 502);
     }
   } else {
     console.info("[contact] Supabase env vars not set. Enquiry not saved to the database.");
@@ -139,6 +139,6 @@ export async function POST(request: Request) {
     console.error("[contact] Email failed:", err instanceof Error ? err.message : err);
     /* If the enquiry is already safe in the database, the visitor still succeeded */
     if (supabase) return json({ ok: true }, 200);
-    return json({ ok: false, message: "We could not send your enquiry. Please email us instead." }, 502);
+    return json({ ok: false, message: "We could not send your message. Please email us instead." }, 502);
   }
 }

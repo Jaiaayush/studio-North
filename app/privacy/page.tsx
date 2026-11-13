@@ -3,7 +3,7 @@
   Tells visitors what the contact form collects, why, where it is kept and
   what rights they have. UK law (UK GDPR) expects a notice like this.
   This is a plain starting draft, not legal advice. Check it matches what you
-  really do, especially how long you keep enquiries.
+  really do, especially how long you keep messages.
 */
 import type { Metadata } from "next";
 import { PageHero } from "@/components/Sections";
@@ -21,7 +21,7 @@ const sections = [
   {
     title: "Who we are",
     body: [
-      `${site.name} is a web design studio in London, run by ${site.founder}. We are the controller of the personal data described on this page. Contact: ${site.email}.`,
+      `${site.name} is a web design studio in London, run by ${site.founder}. We are responsible for the personal details described on this page. Contact: ${site.email}.`,
     ],
   },
   {
@@ -34,20 +34,20 @@ const sections = [
   {
     title: "Why we collect it",
     body: [
-      "We use your details only to reply to your enquiry and prepare a proposal. Our lawful basis is taking steps at your request before entering a contract, and our legitimate interest in answering enquiries.",
+      "We use your details only to reply to your message and work out a price for you. The law allows this because you asked us for a price, and because a business may answer the messages it is sent.",
       "We do not add you to a mailing list and we never sell your details.",
     ],
   },
   {
     title: "Where it is kept",
     body: [
-      "Enquiries are stored in a database provided by Supabase, hosted in the EU (Ireland). Supabase acts as our processor. Only we can read the enquiries.",
+      "Your message is kept in a secure database run by a company called Supabase, on computers in Ireland. Supabase stores it for us. Only we can read it.",
     ],
   },
   {
     title: "How long we keep it",
     body: [
-      "If you do not become a client, we delete your enquiry within 12 months. If you become a client, we keep project and invoice records for as long as tax law requires.",
+      "If you do not become a customer, we delete your message within 12 months. If you do become a customer, we keep job and payment records for as long as tax law says we must.",
     ],
   },
   {
