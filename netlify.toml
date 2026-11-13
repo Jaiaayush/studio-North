@@ -1,0 +1,10 @@
+# netlify.toml: HOSTING SETTINGS (used only by Netlify, ignored by other hosts)
+# Tells Netlify how to build this site. Netlify spots that it is a Next.js
+# project on its own and adds the right adapter, so very little is needed here.
+
+[build]
+  command = "npm run build"   # the same build command used on your computer
+  publish = ".next"           # where Next.js puts the finished site
+
+[build.environment]
+  NODE_VERSION = "22"         # Next.js 16 needs a modern version of Node

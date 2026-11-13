@@ -93,6 +93,7 @@ Frontend runs in the visitor's browser, so anyone can read it. Backend runs only
 | `app/robots.ts` | SEO | Builds `/robots.txt` |
 | `app/opengraph-image.tsx` | SEO | Draws the preview picture for social sharing |
 | `next.config.ts` | Settings | Security headers and Next.js options |
+| `netlify.toml` | Settings | Build settings for the Netlify host |
 | `.env.local` | Settings | Your private values on this computer. Never uploaded |
 | `.env.production` | Settings | Public values for the live site. Uploaded to GitHub, so no secrets here |
 | `.env.example` | Settings | Empty template that lists every variable |
