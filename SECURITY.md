@@ -56,7 +56,8 @@ Frontend code (pages, components, animations) is downloaded by every visitor's b
 - [ ] To receive emails: create a Resend account, verify your domain, then set `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` in the host's settings. Never put these in `.env.production`.
 - [ ] Never put a Supabase `secret` or `service_role` key in any `NEXT_PUBLIC_` variable or in `.env.production`.
 - [ ] Make sure the site is served over HTTPS.
-- [ ] Add a privacy notice. The form collects names, emails and phone numbers, so UK GDPR applies.
-- [ ] Delete the test rows in the `enquiries` table.
+- [x] Privacy notice added at `/privacy`. It is a starting draft, not legal advice. Check the 12-month retention period matches what you really do.
+- [ ] Check whether you must pay the ICO data protection fee (most UK businesses that handle customer details do). See ico.org.uk.
+- [x] Test rows deleted from the `enquiries` table.
 - [ ] Turn on two-factor sign-in for GitHub and Supabase.
 - [ ] Run `npm audit` now and then, and update dependencies.

@@ -20,7 +20,7 @@ export function Footer() {
           <nav aria-label="Footer">
             <h2 className="mb-4 text-sm font-medium tracking-normal text-mute">Pages</h2>
             <ul className="space-y-1">
-              {[...nav, { label: "Contact", href: "/contact" }].map((item) => (
+              {[...nav, { label: "Contact", href: "/contact" }, { label: "Privacy", href: "/privacy" }].map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="link-draw py-2 font-medium">
                     {item.label}

@@ -65,10 +65,10 @@ export const services = [
     number: "02",
     title: "Local SEO",
     summary:
-      "Area pages and a tidy Google Business Profile, so you appear when people nearby search for your trade.",
-    outcome: "Get found by people ready to book.",
+      "Area pages and a tidy Google Business Profile, built to help you appear when people nearby search for your trade. No one can promise a ranking, so we do not.",
+    outcome: "Easier to find for people ready to book.",
     includes: [
-      "Google Business Profile set-up",
+      "Google Business Profile set-up (Google verifies you directly)",
       "A page for each town you serve",
       "Titles and descriptions written for search",
       "Review request link for happy customers",
@@ -79,12 +79,12 @@ export const services = [
     number: "03",
     title: "Redesigns",
     summary:
-      "We rebuild a slow or dated site and keep your domain, your content and your ranking.",
-    outcome: "Turn more of your visitors into enquiries.",
+      "We rebuild a slow or dated site on your existing domain, keep your content, and redirect old pages to protect your search position.",
+    outcome: "Built to turn more visitors into enquiries.",
     includes: [
       "Speed and mobile audit of your current site",
       "New design on your existing domain",
-      "Old pages redirected so rankings hold",
+      "Old pages redirected to the new ones",
       "Clear calls to action on every page",
     ],
   },
@@ -93,11 +93,11 @@ export const services = [
     number: "04",
     title: "Care and edits",
     summary:
-      "Hosting, monthly checks and changes on request, so the site keeps earning after launch.",
-    outcome: "Never run a stale site again.",
+      "An optional monthly plan: hosting, a monthly check and a set amount of edits, so the site stays current after launch.",
+    outcome: "A site that stays up to date.",
     includes: [
-      "Fast, secure hosting",
-      "Text and photo edits each month",
+      "Hosting included in the monthly price",
+      "Up to one hour of text and photo edits each month",
       "Security and software updates",
       "A monthly check that forms still work",
     ],
@@ -119,7 +119,7 @@ export const processSteps = [
   },
   {
     title: "Launch",
-    text: "The site goes live on your domain, Google is set up, and you own all of it.",
+    text: "The site goes live on your domain, your Google profile is submitted, and you own all of it.",
   },
 ];
 
@@ -156,7 +156,7 @@ export const plans = [
     name: "Starter",
     price: "from £900",
     who: "One strong page for a sole trader.",
-    features: ["One-page site, mobile-first", "Tap-to-call and WhatsApp", "Google Business Profile set-up", "Live in about a week"],
+    features: ["One-page site, mobile-first", "Tap-to-call and WhatsApp", "Google Business Profile set-up", "Live about a week after your content arrives"],
     featured: false,
   },
   {
@@ -170,17 +170,32 @@ export const plans = [
     name: "Lead Engine",
     price: "from £5,000",
     who: "For businesses that want a site built to generate leads.",
-    features: ["Everything in Growth", "Landing pages per service and town", "Analytics and call tracking", "Ongoing optimisation"],
+    features: ["Everything in Growth", "Landing pages per service and town", "Visitor and enquiry tracking set-up", "Three months of improvements after launch"],
     featured: false,
   },
+];
+
+/* PLACEHOLDER price for the optional monthly care plan. Confirm before launch. */
+export const carePlan = { price: "from £[00] a month", note: "Optional. Cancel with one month's notice." };
+
+/* Costs that are NOT part of our price. Shown on the Pricing page so nothing is hidden. */
+export const notIncluded = [
+  { item: "Your domain name", detail: "Paid by you, straight to the registrar, and registered in your name. A .co.uk is usually around £10 to £20 a year." },
+  { item: "Hosting after launch", detail: "Covered if you take the optional care plan. Otherwise you pay your own host, and we hand over the files." },
+  { item: "Photography and paid images", detail: "We use your photos. A photographer or paid stock images cost extra, and only if you ask for them." },
+  { item: "Advertising spend", detail: "Google Ads or social ads are paid by you to the platform. We do not run ads as part of these plans." },
+  { item: "Paid third-party tools", detail: "Booking systems, call tracking numbers or paid plugins are billed to you by their makers. We tell you the cost before adding one." },
+  { item: "Work outside the proposal", detail: "Extra pages or features are quoted in writing first. Nothing is added to an invoice without your yes." },
 ];
 
 export const faqs = [
   { q: "How long does a website take?", a: "A one-page Starter site is usually live within a week of the deposit and your content. Larger sites take two to four weeks, depending on pages and photos." },
   { q: "Who owns the website?", a: "You do. The domain is registered in your name and, once the final invoice is paid, the files and words belong to you." },
-  { q: "What about hosting?", a: "Hosting and a care plan are optional monthly extras. You can also take the files and host them anywhere you like." },
-  { q: "Can I make edits after launch?", a: "Yes. Small text and photo edits are included for 30 days. The optional care plan covers changes every month after that." },
-  { q: "Do you do SEO?", a: "Every site is built to be found locally: proper titles, descriptions, area pages and Google Business Profile set-up. Ongoing SEO comes with the Lead Engine plan." },
+  { q: "What about hosting?", a: "Hosting is not part of the build price. It comes with the optional monthly care plan, or you can take the files and host them anywhere you like." },
+  { q: "Can I make edits after launch?", a: "Yes. Small text and photo edits are included for 30 days. The optional care plan covers up to one hour of changes every month after that." },
+  { q: "Do you do SEO?", a: "Every site is built to be found locally: proper titles, descriptions, area pages and Google Business Profile set-up. The Lead Engine plan adds three months of improvements after launch. We never promise a ranking, because Google decides that." },
+  { q: "Are there any extra costs?", a: "Only the ones listed under 'Not included in our price' on this page: your domain, hosting after launch, and anything you choose to add, such as paid photos or adverts. We quote any extra work in writing before doing it." },
+  { q: "How do payments work?", a: "A deposit starts the project and the balance is due before the site goes live. Your proposal states both amounts." },
 ];
 
 /* Budget options in the contact form. The backend only accepts values from this list. */

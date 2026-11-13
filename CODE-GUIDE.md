@@ -25,7 +25,9 @@ Frontend runs in the visitor's browser, so anyone can read it. Backend runs only
 | I want to change... | Edit this |
 | --- | --- |
 | Any wording, services, FAQs | `lib/site.ts` |
-| Prices and plans | `plans` in `lib/site.ts` |
+| Prices and plans | `plans` and `carePlan` in `lib/site.ts` |
+| The "Not included in our price" list | `notIncluded` in `lib/site.ts` |
+| Privacy notice wording | `sections` in `app/privacy/page.tsx` |
 | Projects on the Work page | `projects` in `lib/site.ts` |
 | Reviews | `testimonials` in `lib/site.ts` |
 | Name, email, phone | `site` at the top of `lib/site.ts` |
@@ -51,6 +53,7 @@ Frontend runs in the visitor's browser, so anyone can read it. Backend runs only
 | `app/about/page.tsx` | Frontend | About page, including the founder block |
 | `app/pricing/page.tsx` | Frontend | Pricing page with plans and FAQs |
 | `app/contact/page.tsx` | Frontend | Contact page that holds the form |
+| `app/privacy/page.tsx` | Frontend | Privacy notice: what the form collects and why |
 | `app/thank-you/page.tsx` | Frontend | Confirmation page after the form is sent |
 | `app/not-found.tsx` | Frontend | Custom 404 page |
 | `app/icon.svg` | Frontend | The small icon in the browser tab |

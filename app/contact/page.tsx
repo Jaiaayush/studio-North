@@ -4,6 +4,7 @@
   Contact details come from lib/site.ts.
 */
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Motion";
 import { PageHero } from "@/components/Sections";
@@ -47,7 +48,10 @@ export default function ContactPage() {
                 <li>London, UK</li>
               </ul>
               <p className="mt-8 border-t border-paper/30 pt-6 leading-relaxed text-paper/90">
-                We only use your details to reply to this enquiry. Nothing is added to a mailing list.
+                We only use your details to reply to this enquiry. Nothing is added to a mailing list.{" "}
+                <Link href="/privacy" className="link-draw font-semibold">
+                  Read the privacy notice
+                </Link>
               </p>
             </aside>
           </Reveal>
