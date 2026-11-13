@@ -42,3 +42,4 @@ next-env.d.ts
 
 # keep the safe template, ignore every real env file
 !.env.example
+!.env.production
