@@ -56,7 +56,7 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <Button href="/contact" className="hidden md:inline-flex">
-            Get a proposal
+            Get a price
           </Button>
 
           {/* Menu button (phones only). aria-expanded tells screen readers its state. */}
@@ -109,7 +109,7 @@ export function Header() {
             </nav>
             <div onClick={() => setOpen(false)} className="mt-8">
               <Button href="/contact" className="w-full">
-                Get a proposal
+                Get a price
               </Button>
             </div>
           </motion.div>

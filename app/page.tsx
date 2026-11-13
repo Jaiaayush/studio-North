@@ -41,10 +41,10 @@ export default function HomePage() {
           <div className="mt-10 grid items-end gap-10 lg:grid-cols-[1.1fr_1fr]">
             <Reveal delay={0.5}>
               <p className="max-w-xl text-lg leading-relaxed text-mute md:text-xl">
-                Fast, easy-to-find sites for plumbers, electricians, salons and other local businesses. You get a fixed-price proposal within one working day.
+                We build websites for plumbers, electricians, salons and other local businesses. Tell us what you need and get a fixed price within one working day.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Button href="/contact">Get a proposal</Button>
+                <Button href="/contact">Get a price</Button>
                 <Button href="/work" variant="ghost">
                   See our work
                 </Button>
@@ -78,7 +78,7 @@ export default function HomePage() {
               <h2 className="heading max-w-[14ch]">
                 Four services, <span className="text-violet">one goal</span>
               </h2>
-              <p className="max-w-sm text-lg text-mute-ink">More of the right enquiries, and less time chasing them.</p>
+              <p className="max-w-sm text-lg text-mute-ink">More customers calling you, with less effort from you.</p>
             </div>
           </Reveal>
 

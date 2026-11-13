@@ -11,10 +11,10 @@ import { PageHero } from "@/components/Sections";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Get a website proposal",
-  description: "Tell us about your business and get a fixed-price website proposal within one working day.",
+  title: "Get a website price",
+  description: "Tell us about your business and get a fixed price for your website within one working day.",
   alternates: { canonical: "/contact" },
-  openGraph: { title: "Get a website proposal", url: "/contact" },
+  openGraph: { title: "Get a website price", url: "/contact" },
 };
 
 export default function ContactPage() {
@@ -22,15 +22,15 @@ export default function ContactPage() {
     <>
       <PageHero
         label="Contact"
-        title="Get your proposal in one day."
+        title="Get your price in one day."
         highlight={["one", "day"]}
-        lede="Answer a few questions about your business. A fixed-price proposal comes back within one working day, with no obligation."
+        lede="Answer a few short questions. We send you a fixed price within one working day. You do not have to buy anything."
       />
 
       <section className="bg-ink pb-20 md:pb-32">
         <div className="wrap grid gap-14 lg:grid-cols-[1.6fr_1fr] lg:gap-20">
           <Reveal>
-            <h2 className="mb-8 text-3xl">Proposal form</h2>
+            <h2 className="mb-8 text-3xl">Tell us what you need</h2>
             <ContactForm />
           </Reveal>
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
                 <li>London, UK</li>
               </ul>
               <p className="mt-8 border-t border-paper/30 pt-6 leading-relaxed text-paper/90">
-                We only use your details to reply to this enquiry. Nothing is added to a mailing list.{" "}
+                We only use your details to reply to you. We never add you to a mailing list.{" "}
                 <Link href="/privacy" className="link-draw font-semibold">
                   Read the privacy notice
                 </Link>

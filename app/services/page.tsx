@@ -21,9 +21,9 @@ export default function ServicesPage() {
     <>
       <PageHero
         label="Services"
-        title="Four services that bring in work."
+        title="Four ways we help you get work."
         highlight={["work"]}
-        lede="Each service is built around the same result: more of the right people finding you, and more of them getting in touch."
+        lede="Each one has the same aim: help more local people find you, and make it easy for them to call."
       />
 
       <section className="bg-paper text-ink">
@@ -51,7 +51,7 @@ export default function ServicesPage() {
                     </ul>
                     <div className="mt-8">
                       <Button href="/contact" variant="ink">
-                        Ask about {s.title.toLowerCase()}
+                        Get a price for this
                       </Button>
                     </div>
                   </div>

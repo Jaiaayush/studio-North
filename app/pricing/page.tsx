@@ -20,9 +20,9 @@ export default function PricingPage() {
     <>
       <PageHero
         label="Pricing"
-        title="Fixed prices, agreed up front."
+        title="Fixed prices, agreed before we start."
         highlight={["Fixed"]}
-        lede="Your proposal gives one fixed figure before any work starts, so the invoice never surprises you."
+        lede="You get one fixed price before any work starts, so the bill never surprises you."
       />
 
       <section className="bg-paper py-20 text-ink md:py-28">
@@ -34,7 +34,7 @@ export default function PricingPage() {
           <PlanCards />
           {/* Optional monthly plan, shown apart so it is never mistaken for part of the build price */}
           <p className="mt-8 text-lg text-mute-ink">
-            Optional care plan: <strong className="text-ink">{carePlan.price}</strong>. {carePlan.note}
+            Monthly care plan: <strong className="text-ink">{carePlan.price}</strong>. {carePlan.note}
           </p>
         </div>
       </section>
@@ -47,7 +47,7 @@ export default function PricingPage() {
               Not included <span className="text-lime">in our price</span>
             </h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-mute">
-              No hidden costs means listing them. These are the only things you may pay for on top of your proposal.
+              No hidden costs means showing them. These are the only things you may pay for on top of our price.
             </p>
           </Reveal>
           <Reveal delay={0.1}>

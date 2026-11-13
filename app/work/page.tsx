@@ -19,9 +19,9 @@ export default function WorkPage() {
     <>
       <PageHero
         label="Work"
-        title="Sites built to win local jobs."
+        title="Websites made for local jobs."
         highlight={["local", "jobs"]}
-        lede="These are concept projects: full designs for invented businesses, made to show what we build. Open one to see the whole page. Real client work will join them here."
+        lede="These are example websites. We designed them for made-up businesses, to show you what we can build. Click one to see the whole page. Real customer sites will be added here."
       />
       <section className="bg-ink pb-20 md:pb-32">
         <div className="wrap">

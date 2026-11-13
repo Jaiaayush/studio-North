@@ -13,7 +13,7 @@ export const site = {
   founder: "Jaiaayush Ghosh",
   tagline: "Websites that get London trades booked.",
   description:
-    "A London web design studio for trades and local service businesses. Fast, easy-to-find websites that turn a search into a booked job.",
+    "Websites for London plumbers, electricians, salons and other local businesses. Clear prices, quick to build, easy for customers to find and call you.",
   url: "https://studio-north-ochre.vercel.app", // the live address. Swap for your own domain when you buy one
   email: "ghoshaayush89@gmail.com",
   phone: "", // not set yet: add your business number here and it appears on the site
@@ -31,19 +31,19 @@ export const nav = [
 /* The scrolling strip of words under the hero. */
 export const marqueeWords = [
   "New websites",
-  "Local SEO",
-  "Redesigns",
-  "Care plans",
-  "Google Business Profile",
-  "Landing pages",
+  "Found on Google",
+  "Website makeovers",
+  "Monthly care",
+  "Call buttons",
+  "Fixed prices",
 ];
 
 /* Three facts shown in the hero. Only put things here that are true today.
    When you have real numbers (projects delivered, review score), add them here. */
 export const stats = [
-  { value: "1 day", label: "to get your proposal" },
-  { value: "Fixed", label: "price, agreed up front" },
-  { value: "Yours", label: "to keep after the final invoice" },
+  { value: "1 day", label: "to get your price" },
+  { value: "Fixed", label: "price, agreed before we start" },
+  { value: "Yours", label: "to keep once it is paid for" },
 ];
 
 export const services = [
@@ -52,75 +52,75 @@ export const services = [
     number: "01",
     title: "New websites",
     summary:
-      "A fast, mobile-first site built around your best jobs and the areas you cover.",
-    outcome: "Look credible the moment someone lands.",
+      "A new website that loads fast, looks good on a phone, and shows your best jobs and the areas you work in.",
+    outcome: "Customers trust you the moment they see it.",
     includes: [
-      "Design made for phones first",
-      "Tap-to-call and WhatsApp buttons",
-      "Pages for each service you offer",
-      "Enquiry form sent straight to your inbox",
+      "Made to look right on a phone",
+      "Buttons to call or WhatsApp you in one tap",
+      "A page for each service you offer",
+      "A contact form that sends messages to your email",
     ],
   },
   {
     id: "local-seo",
     number: "02",
-    title: "Local SEO",
+    title: "Get found on Google",
     summary:
-      "Area pages and a tidy Google Business Profile, built to help you appear when people nearby search for your trade. No one can promise a ranking, so we do not.",
-    outcome: "Easier to find for people ready to book.",
+      "We set up your Google listing and add a page for each area you cover, so people nearby can find you. Nobody can promise the top spot on Google, so we do not.",
+    outcome: "Easier to find when people search for your trade.",
     includes: [
-      "Google Business Profile set-up (Google verifies you directly)",
-      "A page for each town you serve",
-      "Titles and descriptions written for search",
-      "Review request link for happy customers",
+      "Your Google listing set up (Google checks it is really you)",
+      "A page for each town you work in",
+      "Page titles written the way people search",
+      "A link you can send customers to leave a review",
     ],
   },
   {
     id: "redesigns",
     number: "03",
-    title: "Redesigns",
+    title: "Website makeovers",
     summary:
-      "We rebuild a slow or dated site on your existing domain, keep your content, and redirect old pages to protect your search position.",
-    outcome: "Built to turn more visitors into enquiries.",
+      "Got a slow or old-looking website? We rebuild it at the same web address, keep your words and photos, and point your old links to the new pages.",
+    outcome: "A fresh site without losing what you had.",
     includes: [
-      "Speed and mobile audit of your current site",
-      "New design on your existing domain",
-      "Old pages redirected to the new ones",
-      "Clear calls to action on every page",
+      "A check of your current site for speed and phone problems",
+      "A new look at your same web address",
+      "Old links sent to the new pages",
+      "A clear call or contact button on every page",
     ],
   },
   {
     id: "care",
     number: "04",
-    title: "Care and edits",
+    title: "Monthly care",
     summary:
-      "An optional monthly plan: hosting, a monthly check and a set amount of edits, so the site stays current after launch.",
-    outcome: "A site that stays up to date.",
+      "An optional monthly plan. We keep your site online, check it each month, and make small changes when you ask.",
+    outcome: "Your site stays working and up to date.",
     includes: [
-      "Hosting included in the monthly price",
-      "Up to one hour of text and photo edits each month",
-      "Security and software updates",
-      "A monthly check that forms still work",
+      "Keeping your site online (hosting) is included",
+      "Up to one hour of text and photo changes each month",
+      "Safety updates done for you",
+      "A monthly check that your contact form still works",
     ],
   },
 ];
 
 export const processSteps = [
   {
-    title: "Proposal",
-    text: "Tell us your trade, goal and budget. A fixed-price proposal reaches you within one working day.",
+    title: "Get a price",
+    text: "Tell us your trade and what you need. We send you a fixed price within one working day.",
   },
   {
-    title: "Plan",
-    text: "A 20-minute call to agree the pages, your best jobs and the words that win work.",
+    title: "Quick call",
+    text: "A 20-minute call to agree which pages you need and what to say on them.",
   },
   {
-    title: "Build",
-    text: "We design and build, then send a live draft to review on your own phone.",
+    title: "We build it",
+    text: "We build the site and send you a link, so you can look at it on your own phone.",
   },
   {
-    title: "Launch",
-    text: "The site goes live on your domain, your Google profile is submitted, and you own all of it.",
+    title: "Go live",
+    text: "Your site goes online at your web address, we send your details to Google, and the site is yours.",
   },
 ];
 
@@ -153,52 +153,54 @@ export const testimonials = [
   { quote: "[Short client quote giving a reason to recommend you to another trade.]", name: "[Client name]", role: "[Trade], [Town]" },
 ];
 
-/* PRICES. These are the founding-client prices for the first 5 clients.
-   Planned rise after 5 clients with reviews: Starter £750, Growth £1,500.
+/* PRICES. Set in November 2026, a little under what UK trade web designers publish:
+   - One-page sites elsewhere: about £600 to £650. Ours: £575.
+   - Sites of about five pages elsewhere: about £995 to £1,250. Ours: £895.
+   - Monthly care elsewhere: about £40 to £60. Ours: £35.
+   Check competitors again every few months and adjust.
    A third "Lead Engine" plan was removed until there are finished jobs to back it up. */
 export const plans = [
   {
     name: "Starter",
-    price: "£450",
-    who: "One strong page for a sole trader.",
-    features: ["One-page site, mobile-first", "Tap-to-call and WhatsApp", "Google Business Profile set-up", "Live about a week after your content arrives"],
+    price: "£575",
+    who: "One page. Right for a one-person business.",
+    features: ["One page that looks right on a phone", "Call and WhatsApp buttons", "Your Google listing set up", "Online about a week after you send your words and photos"],
     featured: false,
   },
   {
     name: "Growth",
-    price: "£950",
-    who: "A multi-page site for an established local business.",
-    features: ["Up to 6 pages", "Local SEO pages for your area", "Enquiry form to your inbox", "Space for your reviews and past jobs"],
+    price: "£895",
+    who: "Up to 6 pages. Right for a busy local business.",
+    features: ["Up to 6 pages", "A page for each area you cover", "A contact form that emails you", "Space for your reviews and past jobs"],
     featured: true,
   },
 ];
 
-/* The line that explains why the prices are low right now. Remove it, and raise
-   the prices above, once the first 5 clients are signed. */
+/* The line shown beside the prices. Remove it once the first 5 clients are signed. */
 export const foundingOffer =
-  "Founding client prices for our first 5 clients. In return we ask for an honest review and permission to show your site as an example.";
+  "Special prices for our first 5 customers. In return, we ask for an honest review and your OK to show your site as an example.";
 
 /* Price of the optional monthly care plan. */
-export const carePlan = { price: "£35 a month", note: "Optional. Cancel with one month's notice." };
+export const carePlan = { price: "£35 a month", note: "You choose if you want it. Stop any time with one month's notice." };
 
 /* Costs that are NOT part of our price. Shown on the Pricing page so nothing is hidden. */
 export const notIncluded = [
-  { item: "Your domain name", detail: "Paid by you, straight to the registrar, and registered in your name. A .co.uk is usually around £10 to £20 a year." },
-  { item: "Hosting after launch", detail: "Covered if you take the optional care plan. Otherwise you pay your own host, and we hand over the files." },
-  { item: "Photography and paid images", detail: "We use your photos. A photographer or paid stock images cost extra, and only if you ask for them." },
-  { item: "Advertising spend", detail: "Google Ads or social ads are paid by you to the platform. We do not run ads as part of these plans." },
-  { item: "Paid third-party tools", detail: "Booking systems, call tracking numbers or paid plugins are billed to you by their makers. We tell you the cost before adding one." },
-  { item: "Work outside the proposal", detail: "Extra pages or features are quoted in writing first. Nothing is added to an invoice without your yes." },
+  { item: "Your web address", detail: "This is the name people type, like yourbusiness.co.uk. You pay the seller directly and it is in your name. A .co.uk is usually around £10 to £20 a year." },
+  { item: "Keeping the site online", detail: "This is called hosting. It is covered if you take the monthly care plan. If not, you pay a hosting company yourself and we give you the files." },
+  { item: "Photos", detail: "We use the photos you send us. A photographer or paid photos cost extra, and only if you ask for them." },
+  { item: "Adverts", detail: "Google or Facebook adverts are paid by you to those companies. We do not run adverts as part of these plans." },
+  { item: "Extra paid tools", detail: "Things like online booking systems are billed to you by the company that makes them. We tell you the cost before adding one." },
+  { item: "Extra work", detail: "Want more pages or features later? We give you a price in writing first. Nothing is added to your bill unless you say yes." },
 ];
 
 export const faqs = [
-  { q: "How long does a website take?", a: "A one-page Starter site is usually live within a week of the deposit and your content. Larger sites take two to four weeks, depending on pages and photos." },
-  { q: "Who owns the website?", a: "You do. The domain is registered in your name and, once the final invoice is paid, the files and words belong to you." },
-  { q: "What about hosting?", a: "Hosting is not part of the build price. It comes with the optional monthly care plan, or you can take the files and host them anywhere you like." },
-  { q: "Can I make edits after launch?", a: "Yes. Small text and photo edits are included for 30 days. The optional care plan covers up to one hour of changes every month after that." },
-  { q: "Do you do SEO?", a: "Every site is built to be found locally: proper titles, descriptions, area pages and Google Business Profile set-up. We never promise a ranking, because Google decides that." },
-  { q: "Are there any extra costs?", a: "Only the ones listed under 'Not included in our price' on this page: your domain, hosting after launch, and anything you choose to add, such as paid photos or adverts. We quote any extra work in writing before doing it." },
-  { q: "How do payments work?", a: "A deposit starts the project and the balance is due before the site goes live. Your proposal states both amounts." },
+  { q: "How long does a website take?", a: "A one-page Starter site is usually online within a week of your first payment and your words and photos. Bigger sites take two to four weeks." },
+  { q: "Who owns the website?", a: "You do. Your web address is in your name. Once the last bill is paid, the website and everything on it is yours." },
+  { q: "What is hosting, and do I pay for it?", a: "Hosting keeps your site online. It is not part of the build price. You get it with the monthly care plan, or you can take the files and use any hosting company you like." },
+  { q: "Can I change things after the site is online?", a: "Yes. Small text and photo changes are free for 30 days. After that, the monthly care plan covers up to one hour of changes each month." },
+  { q: "Will I be top of Google?", a: "We build every site so Google can find it: clear page titles, a page for each area, and your Google listing set up. We never promise the top spot, because Google decides that, not us." },
+  { q: "Are there any extra costs?", a: "Only the ones in the 'Not included in our price' list on this page: your web address, keeping the site online, and anything you choose to add, like paid photos or adverts. We price any extra work in writing before doing it." },
+  { q: "How do I pay?", a: "You pay half to start. You pay the other half when you are happy with the site, before it goes online. Both amounts are written in your price." },
 ];
 
 /* Budget options in the contact form. The backend only accepts values from this list. */

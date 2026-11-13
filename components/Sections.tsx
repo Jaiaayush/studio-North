@@ -121,7 +121,7 @@ export function ConceptOutro() {
       <div className="wrap flex flex-wrap items-end justify-between gap-8">
         <h2 className="heading max-w-[14ch]">Want a site like this one?</h2>
         <Button href="/contact" variant="ink" className="px-8 py-5 text-lg">
-          Get a proposal
+          Get a price
         </Button>
       </div>
     </section>
@@ -135,7 +135,7 @@ export function ProcessSteps() {
       <div className="wrap">
         <Reveal>
           <h2 className="heading max-w-[16ch]">
-            Enquiry to live site in <span className="text-lime">four steps</span>
+            From first message to live website in <span className="text-lime">four steps</span>
           </h2>
         </Reveal>
         <ol className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -210,7 +210,7 @@ export function PlanCards() {
               ))}
             </ul>
             <Button href="/contact" variant={plan.featured ? "lime" : "ghost"} className="mt-auto w-full">
-              Get a proposal
+              Get a price
             </Button>
           </article>
         </Reveal>
@@ -246,12 +246,12 @@ export function CtaBand() {
     <section className="bg-lime py-20 text-ink md:py-32">
       <div className="wrap">
         <Reveal>
-          <h2 className="display max-w-[12ch]">Need more booked jobs?</h2>
+          <h2 className="display max-w-[12ch]">Want more customers calling?</h2>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
             <Button href="/contact" variant="ink" className="px-8 py-5 text-lg">
-              Get a proposal
+              Get a price
             </Button>
-            <p className="max-w-xs font-medium">Fixed price, sent within one working day.</p>
+            <p className="max-w-xs font-medium">We send you a fixed price within one working day.</p>
           </div>
         </Reveal>
       </div>

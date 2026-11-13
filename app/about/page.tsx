@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 
 /* The four promises shown on this page. Edit the wording here. */
 const promises = [
-  { title: "Fixed prices", text: "You see the full price in your proposal before any work starts. It does not change unless you change the job." },
-  { title: "Plain English", text: "No jargon and no hidden extras. If something is not included, the proposal says so." },
-  { title: "You own the site", text: "The domain is in your name. After the final invoice, the design, files and words are yours." },
-  { title: "Built for phones", text: "Most local searches happen on a phone, so every page is designed and tested there first." },
+  { title: "Fixed prices", text: "You see the full price before we start. It does not change unless you ask for something extra." },
+  { title: "Plain words", text: "No tech talk and no hidden extras. If something is not included, we tell you before you pay." },
+  { title: "You own the site", text: "Your web address is in your name. Once the last bill is paid, the whole website is yours." },
+  { title: "Made for phones", text: "Most people look for a local business on their phone, so we design and test every page on a phone first." },
 ];
 
 export default function AboutPage() {
@@ -31,7 +31,7 @@ export default function AboutPage() {
         label="About"
         title="A small studio for local businesses."
         highlight={["local"]}
-        lede="We build websites for London plumbers, electricians, salons, builders and other firms that live on local enquiries. That is all we do, so we do it properly."
+        lede="We build websites for London plumbers, electricians, salons, builders and other local businesses. That is all we do, so we do it properly."
       />
 
       <section className="bg-paper py-20 text-ink md:py-32">
@@ -66,7 +66,7 @@ export default function AboutPage() {
             <p className="text-3xl font-bold tracking-tight">{site.founder}</p>
             <p className="mt-2 font-medium text-lime">Founder, {site.name}</p>
             <p className="mt-5 text-xl leading-relaxed">
-              {site.founder} runs {site.name} from London. You deal with one person from the first email to launch day, and that person also builds your site.
+              {site.founder} runs {site.name} from London. You talk to one person from your first message to the day your site goes online, and that same person builds it.
             </p>
             <div className="mt-8">
               <Button href="/contact">Talk to us</Button>

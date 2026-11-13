@@ -75,7 +75,7 @@ export async function POST(request: Request) {
       const field = String(issue.path[0] ?? "");
       if (field && !errors[field]) errors[field] = issue.message;
     }
-    return json({ ok: false, message: "Please fix the highlighted fields.", errors }, 400);
+    return json({ ok: false, message: "Please check the boxes marked in red.", errors }, 400);
   }
   const data = result.data;
 

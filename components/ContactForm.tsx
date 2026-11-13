@@ -107,7 +107,7 @@ export function ContactForm() {
       </div>
 
       <div className="sm:col-span-2">
-        <label htmlFor="budget" className="font-medium">Rough budget</label>
+        <label htmlFor="budget" className="font-medium">About how much do you want to spend?</label>
         <select id="budget" name="budget" defaultValue="" className={inputClass} {...aria("budget")}>
           <option value="" disabled>Choose a range</option>
           {budgets.map((b) => (
@@ -119,7 +119,7 @@ export function ContactForm() {
 
       <div className="sm:col-span-2">
         <label htmlFor="message" className="font-medium">What do you need?</label>
-        <textarea id="message" name="message" rows={5} placeholder="A few lines about your business and what the site should do" className={inputClass} {...aria("message")} />
+        <textarea id="message" name="message" rows={5} placeholder="Tell us about your business and what you want the website to do" className={inputClass} {...aria("message")} />
         {fieldError("message")}
       </div>
 
@@ -132,13 +132,13 @@ export function ContactForm() {
 
       <div className="flex flex-wrap items-center gap-5 sm:col-span-2">
         <button type="submit" className="btn btn-lime" disabled={status === "sending" || status === "sent"}>
-          {status === "sending" ? "Sending" : status === "sent" ? "Sent" : "Send my enquiry"}
+          {status === "sending" ? "Sending" : status === "sent" ? "Sent" : "Send my message"}
           <Arrow />
         </button>
 
         {/* role="status"/"alert" makes screen readers read the result out loud */}
         {status === "sent" && (
-          <p role="status" className="font-medium text-lime">Enquiry sent. Taking you to the confirmation page.</p>
+          <p role="status" className="font-medium text-lime">Message sent. One moment.</p>
         )}
         {status === "error" && (
           <p role="alert" className="font-medium text-danger">{message}</p>
