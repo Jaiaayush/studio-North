@@ -32,7 +32,7 @@ export function Footer() {
 
           <div>
             <h2 className="mb-4 text-sm font-medium tracking-normal text-mute">
-              Contact <span className="placeholder-tag ml-2">Placeholder</span>
+              Contact
             </h2>
             <ul className="space-y-1 font-medium">
               <li>
@@ -40,7 +40,8 @@ export function Footer() {
                   {site.email}
                 </a>
               </li>
-              <li className="py-2">{site.phone}</li>
+              {site.phone && <li className="py-2">{site.phone}</li>}
+              <li className="py-2">{site.founder}, founder</li>
               <li className="py-2">London, UK</li>
             </ul>
           </div>
@@ -52,7 +53,7 @@ export function Footer() {
         </p>
 
         <p className="mt-6 text-sm text-mute">
-          © {site.name}. Brand name, prices, projects and contact details on this site are placeholders.
+          © {site.name}. Prices, projects and reviews on this site are placeholders.
         </p>
       </div>
     </footer>

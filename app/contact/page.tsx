@@ -36,14 +36,14 @@ export default function ContactPage() {
           <Reveal delay={0.1}>
             <aside className="rounded-3xl bg-violet p-8 md:p-10">
               <h2 className="text-3xl">Prefer email?</h2>
-              <span className="placeholder-tag mt-5">Placeholder details</span>
               <ul className="mt-5 space-y-3 text-lg">
+                <li>{site.founder}</li>
                 <li>
-                  <a href={`mailto:${site.email}`} className="link-draw py-1 font-semibold">
+                  <a href={`mailto:${site.email}`} className="link-draw break-all py-1 font-semibold">
                     {site.email}
                   </a>
                 </li>
-                <li>{site.phone}</li>
+                {site.phone && <li>{site.phone}</li>}
                 <li>London, UK</li>
               </ul>
               <p className="mt-8 border-t border-paper/30 pt-6 leading-relaxed text-paper/90">

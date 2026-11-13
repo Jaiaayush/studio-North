@@ -9,13 +9,14 @@
 
 /* Basic business details. All placeholders until you confirm them. */
 export const site = {
-  name: "Studio North", // placeholder brand name
+  name: "Studio North",
+  founder: "Jaiaayush Ghosh",
   tagline: "Websites that get London trades booked.",
   description:
     "A London web design studio for trades and local service businesses. Fast, easy-to-find websites that turn a search into a booked job.",
   url: "https://www.example.co.uk", // placeholder: your real domain goes here
-  email: "hello@example.co.uk", // placeholder
-  phone: "[020 0000 0000]", // placeholder
+  email: "ghoshaayush89@gmail.com",
+  phone: "", // not set yet: add your business number here and it appears on the site
   area: "London, United Kingdom",
 };
 

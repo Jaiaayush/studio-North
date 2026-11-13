@@ -7,10 +7,12 @@
   3. Read the data, refusing anything oversized or not JSON.
   4. Validate every field with Zod (lib/contact-schema.ts).
   5. If the hidden honeypot field is filled, pretend success and send nothing.
-  6. Email the enquiry with Resend. With no API key (local development),
+  6. Save the enquiry in the Supabase database (lib/supabase/server.ts).
+  7. Email the enquiry with Resend. With no API key (local development),
      log the enquiry in the server terminal instead and still report success.
 */
 import { Resend } from "resend";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { contactSchema } from "@/lib/contact-schema";
 import { rateLimit } from "@/lib/rate-limit";
 
@@ -83,7 +85,28 @@ export async function POST(request: Request) {
     return json({ ok: true }, 200);
   }
 
-  /* 6. SEND. Plain text only, so nothing a visitor types can run as HTML in the inbox. */
+  /* 6. SAVE to the Supabase database (table "enquiries"). No login is needed:
+        the database allows anyone to add a row, and nobody outside to read one.
+        Only the validated fields are stored. The honeypot field is left out. */
+  const supabase = await createSupabaseServerClient();
+  if (supabase) {
+    const { error } = await supabase.from("enquiries").insert({
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      business: data.business,
+      budget: data.budget,
+      message: data.message,
+    });
+    if (error) {
+      console.error("[contact] Database save failed:", error.message);
+      return json({ ok: false, message: "We could not save your enquiry. Please email us instead." }, 502);
+    }
+  } else {
+    console.info("[contact] Supabase env vars not set. Enquiry not saved to the database.");
+  }
+
+  /* 7. EMAIL (optional). Plain text only, so nothing a visitor types can run as HTML in the inbox. */
   const subject = oneLine(`New website enquiry from ${data.name} (${data.business})`);
   const text = [
     `Name: ${oneLine(data.name)}`,
@@ -114,6 +137,8 @@ export async function POST(request: Request) {
   } catch (err) {
     /* Log the real reason for us; show the visitor a safe, general message */
     console.error("[contact] Email failed:", err instanceof Error ? err.message : err);
+    /* If the enquiry is already safe in the database, the visitor still succeeded */
+    if (supabase) return json({ ok: true }, 200);
     return json({ ok: false, message: "We could not send your enquiry. Please email us instead." }, 502);
   }
 }

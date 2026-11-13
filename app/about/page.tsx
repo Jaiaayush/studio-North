@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Motion";
 import { CtaBand, PageHero } from "@/components/Sections";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About our London web design studio",
@@ -62,9 +63,10 @@ export default function AboutPage() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <span className="placeholder-tag">Placeholder</span>
+            <p className="text-3xl font-bold tracking-tight">{site.founder}</p>
+            <p className="mt-2 font-medium text-lime">Founder, {site.name}</p>
             <p className="mt-5 text-xl leading-relaxed">
-              [Your name and a short, honest story go here: who you are, why you started the studio, and what kind of client you enjoy working with.]
+              {site.founder} runs {site.name} from London. You deal with one person from the first email to launch day, and that person also builds your site.
             </p>
             <div className="mt-8">
               <Button href="/contact">Talk to us</Button>
