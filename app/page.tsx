@@ -15,7 +15,7 @@ import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Reveal, RiseText } from "@/components/Motion";
 import { CtaBand, Marquee, PlanCards, ProcessSteps, ProjectCard } from "@/components/Sections";
-import { projects, services, stats } from "@/lib/site";
+import { foundingOffer, projects, services, stats } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -139,7 +139,7 @@ export default function HomePage() {
                 Fixed prices, <span className="text-violet">no surprises</span>
               </h2>
               <p className="max-w-sm text-lg text-mute-ink">
-                Guide prices. Your proposal confirms the exact figure. <span className="placeholder-tag ml-1">Placeholder prices</span>
+                {foundingOffer}
               </p>
             </div>
           </Reveal>

@@ -1,16 +1,16 @@
 /*
   app/pricing/page.tsx: FRONTEND (the Pricing page, address "/pricing")
-  The three plans plus common questions. Prices and answers come from
-  "plans" and "faqs" in lib/site.ts. Prices are placeholders until confirmed.
+  The plans, the costs not included, and common questions. Prices and answers come from
+  "plans" and "faqs" in lib/site.ts.
 */
 import type { Metadata } from "next";
 import { Reveal } from "@/components/Motion";
 import { CtaBand, FaqList, PageHero, PlanCards } from "@/components/Sections";
-import { carePlan, notIncluded } from "@/lib/site";
+import { carePlan, foundingOffer, notIncluded } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Website prices for local businesses",
-  description: "Fixed-price website plans for London trades and local businesses. See guide prices for Starter, Growth and Lead Engine.",
+  description: "Fixed-price website plans for London trades and local businesses. Starter and Growth plans, with every extra cost listed.",
   alternates: { canonical: "/pricing" },
   openGraph: { title: "Website prices for local businesses", url: "/pricing" },
 };
@@ -22,14 +22,14 @@ export default function PricingPage() {
         label="Pricing"
         title="Fixed prices, agreed up front."
         highlight={["Fixed"]}
-        lede="These are guide prices. Your proposal gives one fixed figure before any work starts, so the invoice never surprises you."
+        lede="Your proposal gives one fixed figure before any work starts, so the invoice never surprises you."
       />
 
       <section className="bg-paper py-20 text-ink md:py-28">
         <div className="wrap">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <h2 className="heading">Three plans</h2>
-            <span className="placeholder-tag">Placeholder prices</span>
+            <h2 className="heading">Two plans</h2>
+            <p className="max-w-md text-lg text-mute-ink">{foundingOffer}</p>
           </div>
           <PlanCards />
           {/* Optional monthly plan, shown apart so it is never mistaken for part of the build price */}

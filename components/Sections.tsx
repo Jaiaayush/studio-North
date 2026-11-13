@@ -184,10 +184,10 @@ export function Testimonials() {
 }
 
 /* ---------- PlanCards ---------- */
-/* The three price cards. The "featured" plan is filled violet to stand out. */
+/* The price cards, one per plan in lib/site.ts. The "featured" plan is filled violet to stand out. */
 export function PlanCards() {
   return (
-    <div className="grid gap-6 lg:grid-cols-3">
+    <div className="grid gap-6 md:grid-cols-2">
       {plans.map((plan, i) => (
         <Reveal key={plan.name} delay={i * 0.07}>
           <article

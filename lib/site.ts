@@ -153,33 +153,33 @@ export const testimonials = [
   { quote: "[Short client quote giving a reason to recommend you to another trade.]", name: "[Client name]", role: "[Trade], [Town]" },
 ];
 
-/* PLACEHOLDER prices. Confirm every figure before launch. */
+/* PRICES. These are the founding-client prices for the first 5 clients.
+   Planned rise after 5 clients with reviews: Starter £750, Growth £1,500.
+   A third "Lead Engine" plan was removed until there are finished jobs to back it up. */
 export const plans = [
   {
     name: "Starter",
-    price: "from £900",
+    price: "£450",
     who: "One strong page for a sole trader.",
     features: ["One-page site, mobile-first", "Tap-to-call and WhatsApp", "Google Business Profile set-up", "Live about a week after your content arrives"],
     featured: false,
   },
   {
     name: "Growth",
-    price: "from £2,400",
+    price: "£950",
     who: "A multi-page site for an established local business.",
-    features: ["Up to 6 pages", "Local SEO pages for your area", "Enquiry form to your inbox", "Reviews and case-study sections"],
+    features: ["Up to 6 pages", "Local SEO pages for your area", "Enquiry form to your inbox", "Space for your reviews and past jobs"],
     featured: true,
-  },
-  {
-    name: "Lead Engine",
-    price: "from £5,000",
-    who: "For businesses that want a site built to generate leads.",
-    features: ["Everything in Growth", "Landing pages per service and town", "Visitor and enquiry tracking set-up", "Three months of improvements after launch"],
-    featured: false,
   },
 ];
 
-/* PLACEHOLDER price for the optional monthly care plan. Confirm before launch. */
-export const carePlan = { price: "from £[00] a month", note: "Optional. Cancel with one month's notice." };
+/* The line that explains why the prices are low right now. Remove it, and raise
+   the prices above, once the first 5 clients are signed. */
+export const foundingOffer =
+  "Founding client prices for our first 5 clients. In return we ask for an honest review and permission to show your site as an example.";
+
+/* Price of the optional monthly care plan. */
+export const carePlan = { price: "£35 a month", note: "Optional. Cancel with one month's notice." };
 
 /* Costs that are NOT part of our price. Shown on the Pricing page so nothing is hidden. */
 export const notIncluded = [
@@ -196,10 +196,10 @@ export const faqs = [
   { q: "Who owns the website?", a: "You do. The domain is registered in your name and, once the final invoice is paid, the files and words belong to you." },
   { q: "What about hosting?", a: "Hosting is not part of the build price. It comes with the optional monthly care plan, or you can take the files and host them anywhere you like." },
   { q: "Can I make edits after launch?", a: "Yes. Small text and photo edits are included for 30 days. The optional care plan covers up to one hour of changes every month after that." },
-  { q: "Do you do SEO?", a: "Every site is built to be found locally: proper titles, descriptions, area pages and Google Business Profile set-up. The Lead Engine plan adds three months of improvements after launch. We never promise a ranking, because Google decides that." },
+  { q: "Do you do SEO?", a: "Every site is built to be found locally: proper titles, descriptions, area pages and Google Business Profile set-up. We never promise a ranking, because Google decides that." },
   { q: "Are there any extra costs?", a: "Only the ones listed under 'Not included in our price' on this page: your domain, hosting after launch, and anything you choose to add, such as paid photos or adverts. We quote any extra work in writing before doing it." },
   { q: "How do payments work?", a: "A deposit starts the project and the balance is due before the site goes live. Your proposal states both amounts." },
 ];
 
 /* Budget options in the contact form. The backend only accepts values from this list. */
-export const budgets = ["Under £1,000", "£1,000 to £3,000", "£3,000 to £8,000", "£8,000 or more", "Not sure yet"] as const;
+export const budgets = ["Under £500", "£500 to £1,000", "£1,000 to £2,000", "£2,000 or more", "Not sure yet"] as const;

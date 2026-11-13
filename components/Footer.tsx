@@ -53,7 +53,7 @@ export function Footer() {
         </p>
 
         <p className="mt-6 text-sm text-mute">
-          © {site.name}. Prices shown are guide prices. Projects shown are concept work for invented businesses.
+          © {site.name}. Projects shown are concept work for invented businesses.
         </p>
       </div>
     </footer>
