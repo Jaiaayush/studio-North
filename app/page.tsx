@@ -1,5 +1,5 @@
 /*
-  app/page.tsx — FRONTEND (the Home page, address "/")
+  app/page.tsx: FRONTEND (the Home page, address "/")
   Sections, top to bottom:
   1. Hero: the big headline and the two main buttons
   2. Marquee: scrolling strip of services
@@ -20,7 +20,7 @@ import { projects, services, stats } from "@/lib/site";
 export default function HomePage() {
   return (
     <>
-      {/* 1. HERO — fills the first screen (minus the header height) */}
+      {/* 1. HERO: fills the first screen (minus the header height) */}
       <section className="relative flex min-h-[calc(100svh-4.5rem)] flex-col overflow-hidden bg-ink">
         {/* Two blurred colour glows in the background. Decoration only. */}
         <div aria-hidden="true" className="pointer-events-none absolute -right-48 -top-48 size-[46rem] rounded-full bg-violet opacity-55 blur-[130px]" />
@@ -70,7 +70,7 @@ export default function HomePage() {
         <Marquee />
       </section>
 
-      {/* 3. SERVICES — light section. Each row links to its part of the Services page. */}
+      {/* 3. SERVICES: light section. Each row links to its part of the Services page. */}
       <section className="bg-paper py-20 text-ink md:py-32">
         <div className="wrap">
           <Reveal>
@@ -104,7 +104,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. SELECTED WORK — first three projects from lib/site.ts */}
+      {/* 4. SELECTED WORK: first three projects from lib/site.ts */}
       <section className="bg-ink py-20 md:py-32">
         <div className="wrap">
           <Reveal>

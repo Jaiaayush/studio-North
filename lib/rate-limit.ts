@@ -1,5 +1,5 @@
 /*
-  lib/rate-limit.ts — BACKEND (server only)
+  lib/rate-limit.ts: BACKEND (server only)
   A simple spam brake: each visitor (identified by IP address) may send the
   contact form at most LIMIT times per WINDOW. After that they get a
   "too many requests" answer until the window resets.

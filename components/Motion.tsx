@@ -1,5 +1,5 @@
 /*
-  components/Motion.tsx — FRONTEND (runs in the browser)
+  components/Motion.tsx: FRONTEND (runs in the browser)
   The three animation helpers used across the site, built with the Motion library.
   - MotionProvider: tells Motion to respect the visitor's "reduce motion" setting.
   - Reveal: fades and lifts a block into place the first time it scrolls into view.

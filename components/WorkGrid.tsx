@@ -1,5 +1,5 @@
 /*
-  components/WorkGrid.tsx — FRONTEND (runs in the browser)
+  components/WorkGrid.tsx: FRONTEND (runs in the browser)
   The project grid on the Work page, with the category filter buttons above it.
   It runs in the browser because clicking a filter changes what is shown
   without loading a new page. Projects come from lib/site.ts.

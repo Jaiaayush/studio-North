@@ -1,5 +1,5 @@
 /*
-  lib/supabase/server.ts — BACKEND (server only)
+  lib/supabase/server.ts: BACKEND (server only)
   Creates the connection to the Supabase database for code that runs on the server.
 
   The two values it needs come from the environment (.env.local / .env.production):

@@ -1,5 +1,5 @@
 /*
-  app/api/contact/route.ts — BACKEND (runs only on the server, address "/api/contact")
+  app/api/contact/route.ts: BACKEND (runs only on the server, address "/api/contact")
   Receives the contact form. Visitors can never see this code or the keys it uses.
   Steps for every enquiry, in order:
   1. Check the request really came from our own website.

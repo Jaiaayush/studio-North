@@ -1,5 +1,5 @@
 /*
-  app/opengraph-image.tsx — SEO (server)
+  app/opengraph-image.tsx: SEO (server)
   Draws the preview picture shown when the site is shared on WhatsApp,
   LinkedIn, X and similar. Next.js turns this layout into a 1200x630 PNG at build time.
 */

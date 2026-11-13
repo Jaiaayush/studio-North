@@ -1,5 +1,5 @@
 /*
-  components/ContactForm.tsx — FRONTEND (runs in the browser)
+  components/ContactForm.tsx: FRONTEND (runs in the browser)
   The proposal form on the Contact page.
   What happens when someone presses "Send my enquiry":
   1. The form collects the fields and sends them to our own server at /api/contact.

@@ -1,5 +1,5 @@
 /*
-  app/thank-you/page.tsx — FRONTEND (address "/thank-you")
+  app/thank-you/page.tsx: FRONTEND (address "/thank-you")
   The confirmation page a visitor sees after the contact form is sent.
   It is hidden from search engines (robots: noindex) because it is not a real landing page.
 */

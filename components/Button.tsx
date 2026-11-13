@@ -1,5 +1,5 @@
 /*
-  components/Button.tsx — FRONTEND
+  components/Button.tsx: FRONTEND
   A link that looks like a pill button, with an arrow that nudges on hover.
   Used for every call-to-action so all buttons look and behave the same.
   The colours and hover animation live in app/globals.css under ".btn".

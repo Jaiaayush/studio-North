@@ -1,5 +1,5 @@
 /*
-  app/services/page.tsx — FRONTEND (the Services page, address "/services")
+  app/services/page.tsx: FRONTEND (the Services page, address "/services")
   One block per service, taken from the "services" list in lib/site.ts.
   Each block has an id (for example #local-seo) so the Home page can link straight to it.
 */

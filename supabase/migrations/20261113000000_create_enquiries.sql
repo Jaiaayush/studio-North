@@ -1,4 +1,4 @@
--- supabase/migrations/..._create_enquiries.sql — DATABASE
+-- supabase/migrations/..._create_enquiries.sql: DATABASE
 -- Creates the "enquiries" table that stores every contact form submission.
 -- This exact SQL has already been run on the Studio North Supabase project.
 -- It is kept here as a record, and so the database can be rebuilt from scratch.

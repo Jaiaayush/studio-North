@@ -1,5 +1,5 @@
 /*
-  components/Footer.tsx — FRONTEND
+  components/Footer.tsx: FRONTEND
   The bottom of every page: the studio name set very large, page links,
   and contact details. Contact details come from lib/site.ts and are placeholders.
 */

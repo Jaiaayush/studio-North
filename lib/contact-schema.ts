@@ -1,5 +1,5 @@
 /*
-  lib/contact-schema.ts — BACKEND (server only)
+  lib/contact-schema.ts: BACKEND (server only)
   The rule book for the contact form, written with Zod.
   The server checks every incoming enquiry against these rules. Anything that
   breaks a rule is rejected with the message written beside that rule.

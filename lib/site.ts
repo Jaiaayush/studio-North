@@ -1,5 +1,5 @@
 /*
-  lib/site.ts — CONTENT (used by frontend pages)
+  lib/site.ts: CONTENT (used by frontend pages)
   Every piece of text, price and link on the site lives in this one file.
   To change wording, prices, services or projects: edit here, save, and the pages update.
 

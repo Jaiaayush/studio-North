@@ -1,5 +1,5 @@
 /*
-  components/Header.tsx — FRONTEND (runs in the browser)
+  components/Header.tsx: FRONTEND (runs in the browser)
   The bar at the top of every page: logo, page links, the main button,
   and the full-screen menu that opens on phones.
   It runs in the browser because it needs to know which page you are on

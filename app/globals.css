@@ -1,5 +1,5 @@
 /*
-  globals.css — FRONTEND
+  globals.css: FRONTEND
   The one stylesheet for the whole site.
   - Section 1: design tokens (colours, font, easing). Change a colour here and it changes everywhere.
   - Section 2: base page styles (background, focus ring, skip link).
@@ -231,18 +231,10 @@ h3 {
 
 /* ---------- 4. PAGE TRANSITIONS + REDUCED MOTION ---------- */
 
-/* When you click to another page, the old page fades out and the new one rises in.
-   The "page" class is set by <ViewTransition> in app/layout.tsx. */
-::view-transition-old(.page) {
-  animation: page-out 160ms ease-out both;
-}
-::view-transition-new(.page) {
+/* When you click to another page, the new page fades and rises into place.
+   The "page-enter" class is set in app/template.tsx. */
+.page-enter {
   animation: page-in 420ms var(--ease-out-strong) both;
-}
-@keyframes page-out {
-  to {
-    opacity: 0;
-  }
 }
 @keyframes page-in {
   from {
@@ -259,8 +251,7 @@ h3 {
   .marquee-track {
     animation: none;
   }
-  ::view-transition-old(.page),
-  ::view-transition-new(.page) {
+  .page-enter {
     animation: none;
   }
   .btn,

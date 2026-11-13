@@ -1,5 +1,5 @@
 /*
-  app/not-found.tsx — FRONTEND (the custom 404 page)
+  app/not-found.tsx: FRONTEND (the custom 404 page)
   Shown automatically whenever someone visits an address that does not exist.
 */
 import type { Metadata } from "next";

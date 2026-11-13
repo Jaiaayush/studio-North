@@ -1,5 +1,5 @@
 /*
-  app/layout.tsx — FRONTEND (rendered on the server)
+  app/layout.tsx: FRONTEND (rendered on the server)
   The frame around every page. It:
   - loads the Poppins font,
   - sets the default SEO title, description and social-share tags,
@@ -9,7 +9,6 @@
 */
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
-import { ViewTransition } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MotionProvider } from "@/components/Motion";
@@ -75,10 +74,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <MotionProvider>
           <Header />
-          {/* ViewTransition animates the swap between pages. The "page" class is styled in globals.css. */}
-          <ViewTransition default="page">
-            <main id="main">{children}</main>
-          </ViewTransition>
+          {/* The page-change animation lives in app/template.tsx */}
+          <main id="main">{children}</main>
           <Footer />
         </MotionProvider>
       </body>

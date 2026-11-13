@@ -1,5 +1,5 @@
 /*
-  app/work/page.tsx — FRONTEND (the Work page, address "/work")
+  app/work/page.tsx: FRONTEND (the Work page, address "/work")
   Shows every project with filter buttons. The grid itself is components/WorkGrid.tsx.
   All projects are placeholders until real client work is added in lib/site.ts.
 */

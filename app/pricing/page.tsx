@@ -1,5 +1,5 @@
 /*
-  app/pricing/page.tsx — FRONTEND (the Pricing page, address "/pricing")
+  app/pricing/page.tsx: FRONTEND (the Pricing page, address "/pricing")
   The three plans plus common questions. Prices and answers come from
   "plans" and "faqs" in lib/site.ts. Prices are placeholders until confirmed.
 */

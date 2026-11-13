@@ -1,5 +1,5 @@
 /*
-  next.config.ts — CONFIGURATION (server)
+  next.config.ts: CONFIGURATION (server)
   Settings for the whole app. The important part is SECURITY HEADERS:
   instructions sent with every page that tell the browser what it must refuse to do.
 */

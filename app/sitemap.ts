@@ -1,5 +1,5 @@
 /*
-  app/sitemap.ts — SEO (server)
+  app/sitemap.ts: SEO (server)
   Builds /sitemap.xml: the list of pages we want search engines to index.
   Add a new page's path to the list when you create one.
 */

@@ -1,5 +1,5 @@
 /*
-  app/robots.ts — SEO (server)
+  app/robots.ts: SEO (server)
   Builds /robots.txt: tells search engines which addresses to skip
   (the form endpoint and the thank-you page) and where the sitemap is.
 */

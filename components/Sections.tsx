@@ -1,5 +1,5 @@
 /*
-  components/Sections.tsx — FRONTEND
+  components/Sections.tsx: FRONTEND
   The building blocks that pages are assembled from. Each one is a full-width
   section or a card, and several pages reuse them:
   - PageHero: the big title at the top of every inner page
