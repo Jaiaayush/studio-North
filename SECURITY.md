@@ -51,6 +51,9 @@ Frontend code (pages, components, animations) is downloaded by every visitor's b
 
 ## Before you go live
 
+- [ ] Hosting: Vercel's free Hobby plan does not allow business sites. Move to Vercel Pro or to a host whose free plan allows business use (Netlify is the one checked so far).
+- [ ] Phone number is public on the site. Expect some sales calls.
+
 - [x] Site address in `lib/site.ts` set to the live Vercel link. Change it again when you buy a domain.
 - [ ] Add the two Supabase variables in your host's settings (or rely on `.env.production`).
 - [ ] To receive emails: create a Resend account, verify your domain, then set `RESEND_API_KEY`, `CONTACT_TO_EMAIL` and `CONTACT_FROM_EMAIL` in the host's settings. Never put these in `.env.production`.
