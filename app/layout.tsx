@@ -54,9 +54,10 @@ const localBusiness = {
   description: site.description,
   url: site.url,
   email: site.email,
+  telephone: site.phoneHref,
   areaServed: site.area,
   address: { "@type": "PostalAddress", addressLocality: "London", addressCountry: "GB" },
-  priceRange: "£££",
+  priceRange: "££",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

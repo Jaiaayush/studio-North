@@ -7,7 +7,7 @@
   Replace it with your true details before the site goes live.
 */
 
-/* Basic business details. All placeholders until you confirm them. */
+/* Basic business details. */
 export const site = {
   name: "Studio North",
   founder: "Jaiaayush Ghosh",
@@ -16,7 +16,8 @@ export const site = {
     "Websites for London plumbers, electricians, salons and other local businesses. Clear prices, quick to build, easy for customers to find and call you.",
   url: "https://studio-north-ochre.vercel.app", // the live address. Swap for your own domain when you buy one
   email: "ghoshaayush89@gmail.com",
-  phone: "", // not set yet: add your business number here and it appears on the site
+  phone: "07554 469353", // how the number is shown on the site
+  phoneHref: "+447554469353", // the same number in the form a phone needs to dial it
   area: "London, United Kingdom",
 };
 

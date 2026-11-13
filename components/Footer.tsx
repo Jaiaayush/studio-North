@@ -40,7 +40,14 @@ export function Footer() {
                   {site.email}
                 </a>
               </li>
-              {site.phone && <li className="py-2">{site.phone}</li>}
+              {site.phone && (
+                <li>
+                  {/* tel: makes the number open the phone's dialler when tapped */}
+                  <a href={`tel:${site.phoneHref}`} className="link-draw py-2">
+                    {site.phone}
+                  </a>
+                </li>
+              )}
               <li className="py-2">{site.founder}, founder</li>
               <li className="py-2">London, UK</li>
             </ul>

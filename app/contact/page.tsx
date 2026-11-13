@@ -44,7 +44,13 @@ export default function ContactPage() {
                     {site.email}
                   </a>
                 </li>
-                {site.phone && <li>{site.phone}</li>}
+                {site.phone && (
+                  <li>
+                    <a href={`tel:${site.phoneHref}`} className="link-draw py-1 font-semibold">
+                      {site.phone}
+                    </a>
+                  </li>
+                )}
                 <li>London, UK</li>
               </ul>
               <p className="mt-8 border-t border-paper/30 pt-6 leading-relaxed text-paper/90">
